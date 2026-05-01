@@ -6,7 +6,11 @@ const PhotoCard = ({data}) => {
            <div className='shadow-lg p-11 rounded-xl'>
             <img src={data.imageUrl} alt={data.title} width={300} height={300} className='rounded-xl'/>
             <h3>{data.title}</h3>
-            <HeartFill className='w-6 h-6 text-red-500'></HeartFill>
+            
+            <div className='flex items-center mt-2'>
+                <HeartFill className='w-6 h-6 text-red-500'></HeartFill>
+                <p className='ml-2'>{data.likes}</p>
+            </div>
             </div> 
         </div>
     );
