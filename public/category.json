@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Sci-Fi",
+    "slug": "sci-fi"
+  },
+  {
+    "id": 2,
+    "name": "Fantasy",
+    "slug": "fantasy"
+  },
+  {
+    "id": 3,
+    "name": "Space",
+    "slug": "space"
+  },
+  {
+    "id": 4,
+    "name": "Portrait",
+    "slug": "portrait"
+  },
+  {
+    "id": 5,
+    "name": "Concept Art",
+    "slug": "concept-art"
+  },
+  {
+    "id": 6,
+    "name": "Historical",
+    "slug": "historical"
+  },
+  {
+    "id": 7,
+    "name": "Steampunk",
+    "slug": "steampunk"
+  },
+  {
+    "id": 8,
+    "name": "Nature",
+    "slug": "nature"
+  },
+  {
+    "id": 9,
+    "name": "Animal Art",
+    "slug": "animal-art"
+  }
+]
