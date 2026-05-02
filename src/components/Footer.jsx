@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/all-photos"
+                  href="/photos"
                   className="hover:text-black dark:hover:text-white transition"
                 >
                   Gallery
