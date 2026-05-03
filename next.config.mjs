@@ -3,7 +3,18 @@ const nextConfig = {
   /* config options here */
   reactCompiler: true,
    images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pixgen-lime.vercel.app',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

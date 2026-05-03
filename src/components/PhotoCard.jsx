@@ -7,7 +7,7 @@ const PhotoCard = ({data}) => {
     return (
         <div>
            <div className='shadow-lg py-9 px-5 rounded-xl relative'>
-            <img src={data.imageUrl} alt={data.title} width={350} height={300} className='rounded-xl flex justify-center'/>
+            <img  src={data.imageUrl} alt={data.title} width={350} height={300} className='rounded-xl flex justify-center'/>
             <h3 className='pt-3 font-medium pb-1'>{data.title}</h3>
              <p className='bg-white px-2 rounded-full absolute right-11 top-11'>{data.category}</p>
 
