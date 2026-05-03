@@ -1,10 +1,16 @@
 'use client';
-import { Link, Button } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import { Link, Button, Avatar } from "@heroui/react";
+import { signOut } from "better-auth/api";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
    const pathname = usePathname();
+
+   const userData=authClient.useSession();
+   const user=userData.data?.user;
+
     return (
         <div>
             <nav className="sticky top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -18,7 +24,19 @@ const Navbar = () => {
       <li><Link href="/photos" className={`no-underline ${pathname === "/photos" ? "font-bold text-blue-500" : ""}`} >All Photos</Link></li>
       <li><Link href="/profile" className={`no-underline ${pathname === "/profile" ? "font-bold text-blue-500" : ""}`} >Profile</Link></li>
     </ul>
-    <div className="flex gap-9">
+   
+        {
+          user ? 
+          <div className="flex items-center gap-4">
+           
+          <Button variant="danger" onClick={async()=>{await authClient.signOut()}}>Sign Out</Button>
+          <Avatar>
+        <Avatar.Image alt="Image" src={user?.image} referrerPolicy="no-referrer"/>
+        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+      </Avatar>
+      </div>
+          : 
+          <> <div className="flex gap-9">
           <div className="flex items-center  text-sm">
             <li className="list-none">
               <Link href={"/signup"} className="no-underline"><Button   variant={pathname === "/signup" ? "primary" : "secondary"} >SignUp</Button></Link>
@@ -27,7 +45,8 @@ const Navbar = () => {
               <Link href={"/signin"} className="no-underline"><Button   variant={pathname === "/signin" ? "primary" : "secondary"} >SignIn</Button></Link>
             </li>
           </div>
-        </div>
+        </div></>
+        }
   </header>
 </nav>
    

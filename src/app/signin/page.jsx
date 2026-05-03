@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
     const onSubmit = async (e) => {
@@ -22,6 +23,12 @@ const SignIn = () => {
         });
             console.log({data, error});
   };
+
+  const handleGoogleSignIn = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+};
     return (
         <div className="max-w-4/12 mx-auto mt-7 ">
              <Form className="flex w-96 flex-col gap-4 py-11 px-5 bg-white shadow-2xl rounded-xl" onSubmit={onSubmit}>
@@ -73,6 +80,11 @@ const SignIn = () => {
           Reset
         </Button>
       </div>
+      <p className="text-center text-lg">OR</p>
+      <Button onClick={handleGoogleSignIn} className="w-full border-2 rounded-full" variant="outline">
+        <FcGoogle/>
+        Sign in With Google
+      </Button>
     </Form>
         </div>
     );
