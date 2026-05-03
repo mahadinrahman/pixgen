@@ -2,6 +2,7 @@ import { HeartFill } from '@gravity-ui/icons';
 import { ArrowDownToLine } from '@gravity-ui/icons';
 import { Button } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AllPhotoCard = ({ data }) => {
     return (
@@ -26,7 +27,7 @@ const AllPhotoCard = ({ data }) => {
             </div>
             </div>
                
-                <Button variant="outline" className="w-full mt-3">Details</Button>
+                <Link href={`/photos/${data.id}`}><Button variant="outline" className="w-full mt-3">Details</Button></Link>
             </div> 
         </div>
     );
